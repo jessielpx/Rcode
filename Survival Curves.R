@@ -1,8 +1,11 @@
+install.packages("survival")
+install.packages("survminer")
+install.packages("readxl")
 library(survival)
 library(survminer)
 library(readxl)
 
-
+# The name of the column by which the analysis is done
 index <- "VHL"
 
 # Read in the data and exclude non-localized sample
@@ -11,7 +14,7 @@ tumors <- tumors[tumors$LocalisedRCC == "1", ]
 
 # Filtering
 #tumors <- tumors[tumors$VHL == "1", ]
-# tumors <- tumors[tumors$Sex == "Male", ]
+#tumors <- tumors[tumors$Sex == "Male", ]
 
 # Define the 5-year CSS
 max_time <- 5
